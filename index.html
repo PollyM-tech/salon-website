@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mr Shave It — Premium Mobile Shaver (Home • Office • Events)</title>
-  <meta name="description" content="Mr Shave It is a premium mobile shaving specialist in Kenya. Home calls, office calls, hotels, and events. Book instantly via WhatsApp." />
+  <title>Mr Shave It — Premium Mobile Shaving in Kenya</title>
+  <meta name="description" content="Mr Shave It is a premium mobile shaving specialist in Kenya. Home, office, hotel, and event grooming. Book instantly via WhatsApp." />
+  <meta name="theme-color" content="#0B0D10" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -13,7 +14,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#home" aria-label="Mr Shave It Home">
-        <div class="logo">MS</div>
+        <div class="logo" aria-hidden="true">MS</div>
         <div>
           <div class="brand-name">Mr Shave It</div>
           <small>Premium Mobile Shaving • Kenya</small>
@@ -30,21 +31,48 @@
         <a class="cta" href="#book">Book Now</a>
       </nav>
 
-      <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <!-- Mobile menu button -->
+      <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
+  </header>
 
-    <div class="container mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <!-- MOBILE DRAWER + OVERLAY -->
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="drawer-top">
+      <div class="drawer-brand">
+        <div class="logo" aria-hidden="true">MS</div>
+        <div>
+          <div class="brand-name">Mr Shave It</div>
+          <small>Premium Mobile Shaving • Kenya</small>
+        </div>
+      </div>
+
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <nav class="drawer-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Catalogue</a>
       <a href="#how">How It Works</a>
       <a href="#gallery">Work</a>
       <a href="#contact">Contact</a>
-      <a href="#book" class="cta mobile-cta">Book Now</a>
+      <a class="cta drawer-cta" href="#book">Book Now</a>
+    </nav>
+
+    <div class="drawer-bottom">
+      <div class="drawer-note">Fast booking via WhatsApp</div>
+      <a class="ghost drawer-wa" id="drawerWa" href="#" aria-label="WhatsApp booking">
+        💬 WhatsApp: 0714 660 729
+      </a>
     </div>
-  </header>
+  </aside>
 
   <!-- HOME / LANDING -->
   <main id="home" class="hero">
@@ -55,24 +83,25 @@
         <div class="hero-content">
           <div>
             <div class="pill pill-chips">
-              <span class="dot"></span>
+              <span class="dot" aria-hidden="true"></span>
               <span class="chip">Home</span>
-              <span class="chip">•Office</span>
-              <span class="chip">•Hotels</span>
-              <span class="chip">•Events Calls</span>
-            </div>  
+              <span class="chip">Office</span>
+              <span class="chip">Hotels</span>
+              <span class="chip">Events</span>
+            </div>
+
             <h1>Mr Shave It</h1>
 
             <p class="sub">
-              I’m a premium mobile shaving specialist. I come to you fully equipped — clean setup, sharp tools,
-              and a luxury finish. No queues. No rush. Just confidence, wherever you are.
+              Premium mobile shaving, delivered to your location. I arrive fully equipped with a clean setup,
+              sharp tools, and a smooth finish. Book a time, share your location, and I’ll handle the rest.
             </p>
 
-            <div class="hero-highlights">
-              <span class="hi"><span class="hi-dot"></span> Mobile-ready tools</span>
-              <span class="hi"><span class="hi-dot"></span> Clean & hygienic setup</span>
-              <span class="hi"><span class="hi-dot"></span> Sharp line-ups</span>
-              <span class="hi"><span class="hi-dot"></span> Calm skin finish</span>
+            <div class="hero-highlights" aria-label="Highlights">
+              <span class="hi"><span class="hi-dot" aria-hidden="true"></span> Mobile-ready tools</span>
+              <span class="hi"><span class="hi-dot" aria-hidden="true"></span> Clean & hygienic setup</span>
+              <span class="hi"><span class="hi-dot" aria-hidden="true"></span> Sharp line-ups</span>
+              <span class="hi"><span class="hi-dot" aria-hidden="true"></span> Calm skin finish</span>
             </div>
 
             <div class="hero-actions">
@@ -97,18 +126,18 @@
           </div>
 
           <div class="hero-tags">
-            <span class="tag">Luxury Street Barber</span>
-            <span class="tag">Fast bookings via WhatsApp</span>
+            <span class="tag">Luxury Street Grooming</span>
+            <span class="tag">Fast booking via WhatsApp</span>
             <span class="tag">Nairobi & Surrounds</span>
           </div>
         </div>
       </section>
 
-      <!-- RIGHT SIDE: TRUST / ABOUT PREVIEW -->
+      <!-- RIGHT SIDE: TRUST PANEL -->
       <aside class="side-card" aria-label="Trust panel">
         <h3 class="side-title">Premium Grooming. Delivered.</h3>
         <p class="mini">
-          Built for busy men/women who want a sharp look without leaving their location.
+          Built for busy clients who want a sharp look without stepping out.
         </p>
 
         <div class="badges">
@@ -132,7 +161,7 @@
             <div class="ico">03</div>
             <div>
               <strong>Sharp Finish</strong>
-              <p>Line-up detail, smooth shave, calm skin aftercare.</p>
+              <p>Precise line-up, smooth shave, calm aftercare.</p>
             </div>
           </div>
         </div>
@@ -142,7 +171,7 @@
           <a class="ghost" href="#about">Meet Mr Shave It</a>
         </div>
 
-        <p class="fine">Tip: Use the floating WhatsApp button to book instantly.</p>
+        <p class="fine">Tip: Tap WhatsApp to book instantly.</p>
       </aside>
     </div>
   </main>
@@ -156,7 +185,7 @@
           <h2>Who Mr Shave It Is</h2>
         </div>
         <p class="lead">
-          A mobile shaving service designed around convenience, hygiene, and premium results.
+          A premium mobile service built around convenience, hygiene, and clean results.
         </p>
       </div>
 
@@ -165,20 +194,18 @@
           <span class="tag">The Brand</span>
           <h3 class="title">Luxury grooming anywhere</h3>
           <p class="desc">
-            Mr Shave It is a premium mobile shaving specialist. I travel with professional tools, protect your space
-            with a clean setup, and deliver a sharp finish that looks expensive — because it is done properly.
+            I come with professional tools, protect your space with a clean setup, and deliver a sharp finish that feels premium.
           </p>
           <div class="meta">
-            <span>Home calls</span><span>Office calls</span><span>Events</span>
+            <span>Home</span><span>Office</span><span>Events</span>
           </div>
         </article>
 
         <article class="card half">
-          <span class="tag">Why It Works</span>
+          <span class="tag">Why Clients Book</span>
           <h3 class="title">Built for busy schedules</h3>
           <p class="desc">
-            You don’t need to fight traffic or wait in a shop. Book a time, share your location, and I show up ready.
-            Clean. Professional. Confident.
+            No queues. No rush. Pick a time, share your location, and I show up ready. Clean, professional, confident.
           </p>
           <div class="meta">
             <span>Fast booking</span><span>On-time arrival</span><span>Premium finish</span>
@@ -270,7 +297,7 @@
           <span class="tag">Elite</span>
           <div class="price">Ksh 20,000</div>
           <h3 class="title">Celebrity / Full-Day Service</h3>
-          <p class="desc">High-level, on-call grooming package for premium clients.</p>
+          <p class="desc">High-level on-call grooming for premium clients.</p>
           <div class="meta"><span>On request</span><span>Elite</span></div>
         </article>
       </div>
@@ -292,7 +319,7 @@
         <article class="card">
           <span class="tag">Step 01</span>
           <div class="price">Pick a service</div>
-          <p class="desc">Select from the catalogue, or give your choice and confirm the price.</p>
+          <p class="desc">Select from the catalogue and confirm the package.</p>
         </article>
 
         <article class="card">
@@ -324,7 +351,7 @@
           <div class="kicker">Work</div>
           <h2>Gallery</h2>
         </div>
-        <p class="lead"></p>
+        <p class="lead">A few clean finishes and details.</p>
       </div>
 
       <div class="gallery">
@@ -346,7 +373,7 @@
           <div class="kicker">Contact</div>
           <h2>Reach Mr Shave It</h2>
         </div>
-        <p class="lead">Fastest booking is WhatsApp. You can also call or DM on Instagram.</p>
+        <p class="lead">Fastest booking is WhatsApp. You can also call.</p>
       </div>
 
       <div class="grid">
@@ -354,21 +381,20 @@
           <span class="tag">Service Areas</span>
           <h3 class="title">Nairobi & Surrounds</h3>
           <p class="desc">
-            Home calls, office calls, hotels, and events. Travel fee may apply depending on distance.
+            Home, office, hotels, and events. Travel fee may apply depending on distance.
           </p>
           <div class="meta"><span>Home</span><span>Office</span><span>Events</span></div>
-          <p class="fine">Add your exact areas: Westlands, CBD, Kilimani, Ruaka, Ngong, etc.</p>
         </article>
 
         <article class="card half">
           <span class="tag">Direct Contact</span>
           <h3 class="title">Book instantly</h3>
-          <p class="desc">Use the form below or click WhatsApp to book in seconds.</p>
+          <p class="desc">Tap WhatsApp and share your location. I’ll confirm the time.</p>
           <div class="meta">
-            <span>WhatsApp: +254 7XX XXX XXX</span>
-            <span>Instagram: @mrshaveit</span>
+            <span>WhatsApp/Call: 0714 660 729</span>
+            <span>Kenya</span>
           </div>
-          <p class="fine">Replace the phone number and IG handle with your real ones.</p>
+          <p class="fine">For the fastest response, WhatsApp is best.</p>
         </article>
       </div>
     </div>
@@ -459,7 +485,7 @@
           </div>
 
           <p class="fine">
-            Want to boost trust? Add 3–6 real client reviews and your best before/after photos.
+            Want to level it up? Add real client reviews and your best before/after photos.
           </p>
         </div>
       </div>
@@ -468,17 +494,37 @@
 
   <!-- FLOATING CTA -->
   <div class="float" aria-label="Floating actions">
-    <a class="fab" href="#book" title="Book appointment">💈 Book Now</a>
-    <a class="fab" id="waFloat" href="#" title="WhatsApp booking">💬 WhatsApp</a>
+    <a class="fab" href="#book" title="Book appointment">Book Now</a>
+    <a class="fab" id="waFloat" href="#" title="WhatsApp booking">WhatsApp</a>
   </div>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <strong class="footer-brand">Mr Shave It</strong>
-        <div>Premium Mobile Shaving • Kenya</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brandrow">
+        <div class="footer-brand">
+          <div class="logo" aria-hidden="true">MS</div>
+          <div>
+            <strong>Mr Shave It</strong>
+            <div class="footer-muted">Premium Mobile Shaving • Kenya</div>
+          </div>
+        </div>
+
+        <div class="footer-links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Catalogue</a>
+          <a href="#how">How It Works</a>
+          <a href="#gallery">Work</a>
+          <a href="#contact">Contact</a>
+          <a class="footer-cta" href="#book">Book Now</a>
+        </div>
       </div>
-      <div>© <span id="year"></span> Mr Shave It. All rights reserved.</div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Mr Shave It. All rights reserved.</span>
+      <a class="footer-wa" id="footerWa" href="#" aria-label="WhatsApp booking">WhatsApp: 0714 660 729</a>
     </div>
   </footer>
 
